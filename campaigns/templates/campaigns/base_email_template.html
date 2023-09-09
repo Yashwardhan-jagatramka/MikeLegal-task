@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>{{ subject }}</title>
+</head>
+<body>
+    <h1>{{ subject }}</h1>
+    <p>{{ preview_text }}</p>
+    <p>Read the full article <a href="{{ article_url }}">here</a></p>
+    <hr>
+    {{ html_content|safe }}
+</body>
+</html>
