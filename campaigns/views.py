@@ -10,12 +10,16 @@ import json
 def unsubscribe(request):
     if request.method == 'POST':
         try:
+            # reteriving json data from the reqbody
             data = json.loads(request.body.decode('utf-8'))
+            # reteriving email from json data
             email = data.get('email')
 
             if email:
                 try:
+                    # reteriving object with email
                     subscriber = Subscriber.objects.get(email=email)
+                    # marking isActive as false
                     subscriber.isActive = False
                     subscriber.save()
                     return JsonResponse({'message': 'Subscriber unsubscribed successfully.'})
