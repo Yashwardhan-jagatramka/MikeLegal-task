@@ -6,7 +6,7 @@ from django.views.decorators.csrf import csrf_exempt
 from .models import Subscriber
 import json
 
-@csrf_exempt  # Remove this decorator in production and use proper CSRF handling.
+@csrf_exempt 
 def unsubscribe(request):
     if request.method == 'POST':
         try:

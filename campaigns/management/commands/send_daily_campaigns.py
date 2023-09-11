@@ -43,7 +43,7 @@ class Command(BaseCommand):
             # Create the email message
             msg = MIMEMultipart('alternative')
             msg['Subject'] = email_subject
-            msg['From'] = smtp_username
+            msg['From'] =  smtp_username#smtp_username
             msg['To'] = subscriber.email
 
             # Create HTML and plain text parts
